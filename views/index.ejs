@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  
+    <div >
+        <h1>User List</h1>
+        <a href="/users/add">Add New User</a>
+        <div>
+            <% users.forEach(user => { %>
+                <div>
+                    <div >
+                        <p><strong>Name:</strong> <%= user.name %></p>
+                        <p><strong>Email:</strong> <%= user.email %></p>
+                        <p><strong>Phone:</strong> <%= user.phone %></p>
+                        <p><strong>City:</strong> <%= user.city %></p>
+                    </div>
+                    <div>
+                        <a href="/users/edit/<%= user._id %>" class="edit-btn">Edit</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
